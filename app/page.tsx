@@ -1,4 +1,4 @@
-import { Details, DressCode, Hero, Taimer, We } from "./components";
+import { Details, DressCode, Hero, QuestProfile, Taimer, We } from "./components";
 
 export default function Home() {
   return (
@@ -6,6 +6,7 @@ export default function Home() {
       <Hero />
       <We />
       <DressCode />
+      <QuestProfile />
       <Details />
       <Taimer />
     </main>
