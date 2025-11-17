@@ -21,6 +21,7 @@ export function Details() {
                     <div>
                         <h3 className="text-xl">Чат для гостей</h3>
                         <p>Мы создали группу в Telegram. куда можно будет добавлять фото и видео с нашей свадьбы, чтобы сохранить в памяти лучшие моменты</p>
+                        <button className="py-4 px-6 border border-orange-950 rounded-2xl mt-6">Вступить в чат</button>
                     </div>
                 </div>
             </div>

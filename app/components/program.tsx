@@ -25,7 +25,6 @@ export function Program() {
     return (
       <div className="container">
         <h2 className="font-anastasia text-6xl text-center mb-6">Программа</h2>
-
         
         <div className="flex flex-col items-start w-fit m-auto">
             {items.map((item, i) => (
