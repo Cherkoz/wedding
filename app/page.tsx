@@ -1,11 +1,13 @@
-import { Calendar, Details, DressCode, Hero, Program, QuestProfile, Taimer, We } from "./components";
+import { Calendar, Dear, Details, DressCode, Hero, Location, Program, QuestProfile, Taimer, We } from "./components";
 
 export default function Home() {
   return (
     <main>
       <Hero />
       <We />
+      <Dear />
       <Calendar />
+      <Location />
       <Program />
       <DressCode />
       <QuestProfile />
