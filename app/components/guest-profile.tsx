@@ -1,4 +1,11 @@
+'use client';
+
+import { useState } from "react";
+import { QuestionModal } from "./modals/question-modal";
+
 export function QuestProfile() {
+    const [openModal, setOpenModal] = useState(false);
+
     return (
         <div className="container flex flex-col items-center">
             <h2 className="mb-6 text-center text-6xl font-anastasia">Анкета гостя</h2>
@@ -9,7 +16,14 @@ export function QuestProfile() {
             </p>
             <p className="text-center mt-6">Будем ждать ответ до 01.04.2025</p>
 
-            <button className="py-4 px-6 bg-pink-100 rounded-2xl mt-6">Заполнить</button>
+            <button
+                className="py-4 px-6 bg-pink-100 rounded-2xl mt-6"
+                onClick={() => setOpenModal(true)}
+            >
+                Заполнить
+            </button>
+
+            {openModal && <QuestionModal onClose={() => setOpenModal(false)} />}
         </div>
     );
 }
