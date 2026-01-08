@@ -66,7 +66,7 @@ export function QuestionModal({ onClose }: QuestionModalProps) {
                 <ModalBody>
                     <div className="space-y-4">
                         <div>
-                            <Label htmlFor="fullName" className="mb-2 block">ФИО</Label>
+                            <Label htmlFor="fullName" className="mb-2 block text-base">ФИО</Label>
                             <Controller
                                 name="fullName"
                                 control={control}
@@ -76,19 +76,19 @@ export function QuestionModal({ onClose }: QuestionModalProps) {
                                         id="fullName"
                                         type="text"
                                         placeholder="Введите ваше полное имя"
-                                        className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
+                                        className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-base text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
                                     />
                                 )}
                             />
                             {errors.fullName && (
-                                <p className="mt-1 text-sm text-red-600 dark:text-red-500">
+                                <p className="mt-1 text-base text-red-600 dark:text-red-500">
                                     {errors.fullName.message}
                                 </p>
                             )}
                         </div>
 
                         <div>
-                            <Label className="mb-2 block">Планируете ли вы присутствовать?</Label>
+                            <Label className="mb-2 block text-base">Планируете ли вы присутствовать?</Label>
                             <div className="flex flex-col gap-2">
                                 <Controller
                                     name="attendance"
@@ -102,7 +102,7 @@ export function QuestionModal({ onClose }: QuestionModalProps) {
                                                     value="yes"
                                                     checked={field.value === 'yes'}
                                                 />
-                                                <Label htmlFor="attendance-yes">Обязательно буду</Label>
+                                                <Label htmlFor="attendance-yes" className="text-base">Обязательно буду</Label>
                                             </div>
                                             <div className="flex items-center gap-2">
                                                 <Radio
@@ -111,21 +111,21 @@ export function QuestionModal({ onClose }: QuestionModalProps) {
                                                     value="no"
                                                     checked={field.value === 'no'}
                                                 />
-                                                <Label htmlFor="attendance-no">К сожалению, не смогу присутствовать</Label>
+                                                <Label htmlFor="attendance-no" className="text-base">К сожалению, не смогу присутствовать</Label>
                                             </div>
                                         </>
                                     )}
                                 />
                             </div>
                             {errors.attendance && (
-                                <p className="mt-1 text-sm text-red-600 dark:text-red-500">
+                                <p className="mt-1 text-base text-red-600 dark:text-red-500">
                                     {errors.attendance.message}
                                 </p>
                             )}
                         </div>
 
                         <div>
-                            <Label className="mb-2 block">Количество гостей</Label>
+                            <Label className="mb-2 block text-base">Количество гостей</Label>
                             <div className="flex flex-col gap-2">
                                 <Controller
                                     name="guestCount"
@@ -139,7 +139,7 @@ export function QuestionModal({ onClose }: QuestionModalProps) {
                                                     value="1"
                                                     checked={field.value === '1'}
                                                 />
-                                                <Label htmlFor="guest-count-1">1 гость</Label>
+                                                <Label htmlFor="guest-count-1" className="text-base">1 гость</Label>
                                             </div>
                                             <div className="flex items-center gap-2">
                                                 <Radio
@@ -148,21 +148,21 @@ export function QuestionModal({ onClose }: QuestionModalProps) {
                                                     value="plus-one"
                                                     checked={field.value === 'plus-one'}
                                                 />
-                                                <Label htmlFor="guest-count-plus-one">+1 гость</Label>
+                                                <Label htmlFor="guest-count-plus-one" className="text-base">+1 гость</Label>
                                             </div>
                                         </>
                                     )}
                                 />
                             </div>
                             {errors.guestCount && (
-                                <p className="mt-1 text-sm text-red-600 dark:text-red-500">
+                                <p className="mt-1 text-base text-red-600 dark:text-red-500">
                                     {errors.guestCount.message}
                                 </p>
                             )}
                         </div>
 
                         <div>
-                            <Label className="mb-2 block">Предпочтения по алкоголю</Label>
+                            <Label className="mb-2 block text-base">Предпочтения по алкоголю</Label>
                             <div className="flex flex-col gap-2">
                                 <Controller
                                     name="alcoholPreferences"
@@ -182,7 +182,7 @@ export function QuestionModal({ onClose }: QuestionModalProps) {
                                                         }
                                                     }}
                                                 />
-                                                <Label htmlFor="alcohol-wine">Вино</Label>
+                                                <Label htmlFor="alcohol-wine" className="text-base">Вино</Label>
                                             </div>
                                             <div className="flex items-center gap-2">
                                                 <Checkbox
@@ -197,7 +197,7 @@ export function QuestionModal({ onClose }: QuestionModalProps) {
                                                         }
                                                     }}
                                                 />
-                                                <Label htmlFor="alcohol-champagne">Шампанское</Label>
+                                                <Label htmlFor="alcohol-champagne" className="text-base">Шампанское</Label>
                                             </div>
                                             <div className="flex items-center gap-2">
                                                 <Checkbox
@@ -212,7 +212,7 @@ export function QuestionModal({ onClose }: QuestionModalProps) {
                                                         }
                                                     }}
                                                 />
-                                                <Label htmlFor="alcohol-vodka">Водка</Label>
+                                                <Label htmlFor="alcohol-vodka" className="text-base">Водка</Label>
                                             </div>
                                             <div className="flex items-center gap-2">
                                                 <Checkbox
@@ -227,7 +227,7 @@ export function QuestionModal({ onClose }: QuestionModalProps) {
                                                         }
                                                     }}
                                                 />
-                                                <Label htmlFor="alcohol-whiskey">Виски</Label>
+                                                <Label htmlFor="alcohol-whiskey" className="text-base">Виски</Label>
                                             </div>
                                             <div className="flex items-center gap-2">
                                                 <Checkbox
@@ -242,7 +242,7 @@ export function QuestionModal({ onClose }: QuestionModalProps) {
                                                         }
                                                     }}
                                                 />
-                                                <Label htmlFor="alcohol-cognac">Коньяк</Label>
+                                                <Label htmlFor="alcohol-cognac" className="text-base">Коньяк</Label>
                                             </div>
                                             <div className="flex items-center gap-2">
                                                 <Checkbox
@@ -257,7 +257,7 @@ export function QuestionModal({ onClose }: QuestionModalProps) {
                                                         }
                                                     }}
                                                 />
-                                                <Label htmlFor="alcohol-beer">Пиво</Label>
+                                                <Label htmlFor="alcohol-beer" className="text-base">Пиво</Label>
                                             </div>
                                             <div className="flex items-center gap-2">
                                                 <Checkbox
@@ -272,14 +272,14 @@ export function QuestionModal({ onClose }: QuestionModalProps) {
                                                         }
                                                     }}
                                                 />
-                                                <Label htmlFor="alcohol-none">Не употребляю</Label>
+                                                <Label htmlFor="alcohol-none" className="text-base">Не употребляю</Label>
                                             </div>
                                         </>
                                     )}
                                 />
                             </div>
                             {errors.alcoholPreferences && (
-                                <p className="mt-1 text-sm text-red-600 dark:text-red-500">
+                                <p className="mt-1 text-base text-red-600 dark:text-red-500">
                                     {errors.alcoholPreferences.message}
                                 </p>
                             )}
