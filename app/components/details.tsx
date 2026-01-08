@@ -6,16 +6,19 @@ export function Details() {
             <h2 className="mb-6 text-center text-6xl font-anastasia">Пожелания и детали</h2>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <Image src="" alt="" className="w-full h-100" />
+                <Image src="/assets/images/details.jpeg" width={1000} height={1000} alt="" className="w-full" />
                 <div>
-                    <div className="border-b border-red-500 pb-2 mb-4">
+                    <div className="border-b border-amber-950 pb-2 mb-4">
                         <h3 className="text-xl">Подарки</h3>
                         <p>Ваше присутствие - лучший подарок, но если вы захотите сделать еще что-то, будем рады конвертику</p>
                     </div>
 
-                    <div className="border-b border-red-500 pb-2 mb-4">
+                    <div className="border-b border-amber-950 pb-2 mb-4">
                         <h3 className="text-xl">Контакты</h3>
-                        <p>По возникающим вопросам можете обращаться по номеру телефона невесты 8 (977) 415 96 46</p>
+                        <p>
+                            По возникающим вопросам можете обращаться по номеру телефона невесты <br/>
+                            +7 (977) 415 96 46
+                        </p>
                     </div>
 
                     <div>
