@@ -42,19 +42,19 @@ export function Taimer() {
                 <div className="bg-white grid grid-cols-4 rounded-2xl p-6">
                     <div className="flex flex-col items-center">
                         <div className="text-4xl sm:text-6xl font-bold">{timeLeft.days}</div>
-                        <div className="text-sm sm:text-base text-gray-600 dark:text-gray-400">дней</div>
+                        <div className="text-sm sm:text-base text-gray-600">дней</div>
                     </div>
                     <div className="flex flex-col items-center">
                         <div className="text-4xl sm:text-6xl font-bold">{timeLeft.hours}</div>
-                        <div className="text-sm sm:text-base text-gray-600 dark:text-gray-400">часов</div>
+                        <div className="text-sm sm:text-base text-gray-600">часов</div>
                     </div>
                     <div className="flex flex-col items-center">
                         <div className="text-4xl sm:text-6xl font-bold">{timeLeft.minutes}</div>
-                        <div className="text-sm sm:text-base text-gray-600 dark:text-gray-400">минут</div>
+                        <div className="text-sm sm:text-base text-gray-600">минут</div>
                     </div>
                     <div className="flex flex-col items-center">
                         <div className="text-4xl sm:text-6xl font-bold">{timeLeft.seconds}</div>
-                        <div className="text-sm sm:text-base text-gray-600 dark:text-gray-400">секунд</div>
+                        <div className="text-sm sm:text-base text-gray-600">секунд</div>
                     </div>
                 </div>
 

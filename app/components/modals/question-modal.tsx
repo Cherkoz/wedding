@@ -1,6 +1,6 @@
 'use client';
 
-import { Modal, ModalBody, ModalHeader } from "flowbite-react";
+import { Button, Modal, ModalBody, ModalFooter, ModalHeader } from "flowbite-react";
 
 interface QuestionModalProps {
     onClose: () => void;
@@ -13,6 +13,10 @@ export function QuestionModal({ onClose }: QuestionModalProps) {
             <ModalBody>
                 {/* <div>kek</div> */}
             </ModalBody>
+            <ModalFooter className="w-full justify-between">
+                <div />
+                <Button>Отправить</Button>
+            </ModalFooter>
         </Modal>
     );
 }
