@@ -25,7 +25,7 @@ export function Calendar() {
                         key={num}
                         className={`relative flex justify-center items-center text-center py-2 ${num === 27 ? 'text-red-500' : ''}`}
                     >
-                        {num === 27 && <CiHeart className="absolute mt-1 w-18 h-18" />}
+                        {num === 27 && <CiHeart className="absolute mt-1 w-18 h-18 heart-animate" />}
                         {num}
                     </div>
                 ))}
