@@ -172,12 +172,13 @@ export function QuestionModal({ onClose }: QuestionModalProps) {
                                             <div className="flex items-center gap-2">
                                                 <Checkbox
                                                     id="alcohol-wine"
-                                                    checked={field.value.includes('wine')}
+                                                    checked={(field.value ?? []).includes('wine')}
                                                     onChange={(e) => {
+                                                        const currentValue = field.value ?? [];
                                                         if (e.target.checked) {
-                                                            field.onChange([...field.value, 'wine']);
+                                                            field.onChange([...currentValue, 'wine']);
                                                         } else {
-                                                            field.onChange(field.value.filter((v: string) => v !== 'wine'));
+                                                            field.onChange(currentValue.filter((v) => v !== 'wine'));
                                                         }
                                                     }}
                                                 />
@@ -186,12 +187,13 @@ export function QuestionModal({ onClose }: QuestionModalProps) {
                                             <div className="flex items-center gap-2">
                                                 <Checkbox
                                                     id="alcohol-champagne"
-                                                    checked={field.value.includes('champagne')}
+                                                    checked={(field.value ?? []).includes('champagne')}
                                                     onChange={(e) => {
+                                                        const currentValue = field.value ?? [];
                                                         if (e.target.checked) {
-                                                            field.onChange([...field.value, 'champagne']);
+                                                            field.onChange([...currentValue, 'champagne']);
                                                         } else {
-                                                            field.onChange(field.value.filter((v: string) => v !== 'champagne'));
+                                                            field.onChange(currentValue.filter((v) => v !== 'champagne'));
                                                         }
                                                     }}
                                                 />
@@ -200,12 +202,13 @@ export function QuestionModal({ onClose }: QuestionModalProps) {
                                             <div className="flex items-center gap-2">
                                                 <Checkbox
                                                     id="alcohol-vodka"
-                                                    checked={field.value.includes('vodka')}
+                                                    checked={(field.value ?? []).includes('vodka')}
                                                     onChange={(e) => {
+                                                        const currentValue = field.value ?? [];
                                                         if (e.target.checked) {
-                                                            field.onChange([...field.value, 'vodka']);
+                                                            field.onChange([...currentValue, 'vodka']);
                                                         } else {
-                                                            field.onChange(field.value.filter((v: string) => v !== 'vodka'));
+                                                            field.onChange(currentValue.filter((v) => v !== 'vodka'));
                                                         }
                                                     }}
                                                 />
@@ -214,12 +217,13 @@ export function QuestionModal({ onClose }: QuestionModalProps) {
                                             <div className="flex items-center gap-2">
                                                 <Checkbox
                                                     id="alcohol-whiskey"
-                                                    checked={field.value.includes('whiskey')}
+                                                    checked={(field.value ?? []).includes('whiskey')}
                                                     onChange={(e) => {
+                                                        const currentValue = field.value ?? [];
                                                         if (e.target.checked) {
-                                                            field.onChange([...field.value, 'whiskey']);
+                                                            field.onChange([...currentValue, 'whiskey']);
                                                         } else {
-                                                            field.onChange(field.value.filter((v: string) => v !== 'whiskey'));
+                                                            field.onChange(currentValue.filter((v) => v !== 'whiskey'));
                                                         }
                                                     }}
                                                 />
@@ -228,12 +232,13 @@ export function QuestionModal({ onClose }: QuestionModalProps) {
                                             <div className="flex items-center gap-2">
                                                 <Checkbox
                                                     id="alcohol-cognac"
-                                                    checked={field.value.includes('cognac')}
+                                                    checked={(field.value ?? []).includes('cognac')}
                                                     onChange={(e) => {
+                                                        const currentValue = field.value ?? [];
                                                         if (e.target.checked) {
-                                                            field.onChange([...field.value, 'cognac']);
+                                                            field.onChange([...currentValue, 'cognac']);
                                                         } else {
-                                                            field.onChange(field.value.filter((v: string) => v !== 'cognac'));
+                                                            field.onChange(currentValue.filter((v) => v !== 'cognac'));
                                                         }
                                                     }}
                                                 />
@@ -242,12 +247,13 @@ export function QuestionModal({ onClose }: QuestionModalProps) {
                                             <div className="flex items-center gap-2">
                                                 <Checkbox
                                                     id="alcohol-beer"
-                                                    checked={field.value.includes('beer')}
+                                                    checked={(field.value ?? []).includes('beer')}
                                                     onChange={(e) => {
+                                                        const currentValue = field.value ?? [];
                                                         if (e.target.checked) {
-                                                            field.onChange([...field.value, 'beer']);
+                                                            field.onChange([...currentValue, 'beer']);
                                                         } else {
-                                                            field.onChange(field.value.filter((v: string) => v !== 'beer'));
+                                                            field.onChange(currentValue.filter((v) => v !== 'beer'));
                                                         }
                                                     }}
                                                 />
@@ -256,12 +262,13 @@ export function QuestionModal({ onClose }: QuestionModalProps) {
                                             <div className="flex items-center gap-2">
                                                 <Checkbox
                                                     id="alcohol-none"
-                                                    checked={field.value.includes('none')}
+                                                    checked={(field.value ?? []).includes('none')}
                                                     onChange={(e) => {
+                                                        const currentValue = field.value ?? [];
                                                         if (e.target.checked) {
-                                                            field.onChange([...field.value, 'none']);
+                                                            field.onChange([...currentValue, 'none']);
                                                         } else {
-                                                            field.onChange(field.value.filter((v: string) => v !== 'none'));
+                                                            field.onChange(currentValue.filter((v) => v !== 'none'));
                                                         }
                                                     }}
                                                 />
