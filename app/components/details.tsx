@@ -5,7 +5,7 @@ export function Details() {
         <div className="container">
             <h2 className="mb-6 text-center text-6xl font-anastasia">Пожелания и детали</h2>
 
-            <div className="grid grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <Image src="" alt="" className="w-full h-100" />
                 <div>
                     <div className="border-b border-red-500 pb-2 mb-4">

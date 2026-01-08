@@ -11,7 +11,12 @@ export function We() {
                     вместе навсегда
                 </p>
             </div>
-            <Image src="" alt="" className="w-[300px] min-w-[300px] h-[400px] bg-red-500" />
+            <Image src="/assets/images/this-us.jpg"
+                className="w-full md:w-[300px] max-w-full"
+                width={300}
+                height={400}
+                alt=""
+            />
         </div>
     );
 }
