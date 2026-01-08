@@ -62,7 +62,9 @@ export function QuestionModal({ onClose }: QuestionModalProps) {
     return (
         <FormProvider {...formMethods}>
             <Modal dismissible show onClose={onClose}>
-                <ModalHeader><h4 className="font-extrabold">Анкета гостя</h4></ModalHeader>
+                <ModalHeader className="border-gray-200">
+                    <h4 className="font-extrabold">Анкета гостя</h4>
+                </ModalHeader>
                 <ModalBody>
                     <div className="space-y-4">
                         <div>
@@ -76,12 +78,12 @@ export function QuestionModal({ onClose }: QuestionModalProps) {
                                         id="fullName"
                                         type="text"
                                         placeholder="Введите ваше полное имя"
-                                        className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-base text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
+                                        className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-base text-gray-900 focus:border-blue-500 focus:ring-blue-500"
                                     />
                                 )}
                             />
                             {errors.fullName && (
-                                <p className="mt-1 text-base text-red-600 dark:text-red-500">
+                                <p className="mt-1 text-base text-red-600">
                                     {errors.fullName.message}
                                 </p>
                             )}
@@ -118,7 +120,7 @@ export function QuestionModal({ onClose }: QuestionModalProps) {
                                 />
                             </div>
                             {errors.attendance && (
-                                <p className="mt-1 text-base text-red-600 dark:text-red-500">
+                                <p className="mt-1 text-base text-red-600">
                                     {errors.attendance.message}
                                 </p>
                             )}
@@ -155,7 +157,7 @@ export function QuestionModal({ onClose }: QuestionModalProps) {
                                 />
                             </div>
                             {errors.guestCount && (
-                                <p className="mt-1 text-base text-red-600 dark:text-red-500">
+                                <p className="mt-1 text-base text-red-600">
                                     {errors.guestCount.message}
                                 </p>
                             )}
@@ -279,7 +281,7 @@ export function QuestionModal({ onClose }: QuestionModalProps) {
                                 />
                             </div>
                             {errors.alcoholPreferences && (
-                                <p className="mt-1 text-base text-red-600 dark:text-red-500">
+                                <p className="mt-1 text-base text-red-600">
                                     {errors.alcoholPreferences.message}
                                 </p>
                             )}
