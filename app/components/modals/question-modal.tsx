@@ -62,11 +62,11 @@ export function QuestionModal({ onClose }: QuestionModalProps) {
     return (
         <FormProvider {...formMethods}>
             <Modal dismissible show onClose={onClose}>
-                <ModalHeader>Анкета гостя</ModalHeader>
+                <ModalHeader><h4 className="font-extrabold">Анкета гостя</h4></ModalHeader>
                 <ModalBody>
                     <div className="space-y-4">
                         <div>
-                            <Label htmlFor="fullName" className="mb-2 block text-base">ФИО</Label>
+                            <Label htmlFor="fullName" className="mb-2 block text-base font-extrabold">ФИО</Label>
                             <Controller
                                 name="fullName"
                                 control={control}
@@ -88,7 +88,7 @@ export function QuestionModal({ onClose }: QuestionModalProps) {
                         </div>
 
                         <div>
-                            <Label className="mb-2 block text-base">Планируете ли вы присутствовать?</Label>
+                            <Label className="mb-2 block text-base font-extrabold">Планируете ли вы присутствовать?</Label>
                             <div className="flex flex-col gap-2">
                                 <Controller
                                     name="attendance"
@@ -125,7 +125,7 @@ export function QuestionModal({ onClose }: QuestionModalProps) {
                         </div>
 
                         <div>
-                            <Label className="mb-2 block text-base">Количество гостей</Label>
+                            <Label className="mb-2 block text-base font-extrabold">Количество гостей</Label>
                             <div className="flex flex-col gap-2">
                                 <Controller
                                     name="guestCount"
@@ -162,7 +162,7 @@ export function QuestionModal({ onClose }: QuestionModalProps) {
                         </div>
 
                         <div>
-                            <Label className="mb-2 block text-base">Предпочтения по алкоголю</Label>
+                            <Label className="mb-2 block text-base font-extrabold">Предпочтения по алкоголю</Label>
                             <div className="flex flex-col gap-2">
                                 <Controller
                                     name="alcoholPreferences"

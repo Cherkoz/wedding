@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { ThemeInit } from "../.flowbite-react/init";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -14,7 +15,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Приглашение на свадьбу",
-  description: "Дорогие друзья и родные Совсем скоро в нашей жизни произойдет очень важное событие - наша свадьба! Мы с радостью приглашаем вас разделить с нами этот особенный день. Ваша поддержка и присутствие сделают наш праздник незабываемым.",
+  description: "",
 };
 
 export default function RootLayout({
@@ -28,6 +29,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         {children}
+        <ThemeInit />
       </body>
     </html>
   );
