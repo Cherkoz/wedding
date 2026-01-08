@@ -2,7 +2,7 @@ import { BsHeartFill } from "react-icons/bs";
 import { CiHeart } from "react-icons/ci";
 
 export function Calendar() {
-    const textStyle = 'text-center py-2';
+    const textStyle = 'text-center py-2 font-semibold';
 
     return (
         <div className="container">
@@ -23,9 +23,9 @@ export function Calendar() {
                 {Array.from({ length: 30 }, (_, i) => i + 1).map((num) => (
                     <div
                         key={num}
-                        className={`relative flex justify-center items-center text-center py-2 ${num === 27 ? 'text-red-500' : ''}`}
+                        className={`relative flex justify-center items-center text-center py-2 ${num === 27 ? 'text-red-500 font-extrabold' : 'font-medium'}`}
                     >
-                        {num === 27 && <CiHeart className="absolute mt-1 w-18 h-18 heart-animate" />}
+                        {num === 27 && <CiHeart className="absolute mt-1 w-20 h-20 heart-animate" />}
                         {num}
                     </div>
                 ))}
