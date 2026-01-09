@@ -54,3 +54,11 @@ body {
 .heart-animate {
   animation: heartbeat 1.5s ease-in-out infinite;
 }
+
+/* .swiper-pagination-bullet {
+  @apply h-4! w-4! opacity-100! bg-gray-200! dark:bg-border!;
+}
+
+.swiper-pagination-bullet-active {
+  @apply bg-blue-500! dark:bg-blue-800! mx-1.5!;
+} */

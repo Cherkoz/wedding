@@ -46,17 +46,29 @@ export function QuestionModal({ onClose }: QuestionModalProps) {
     const submit = handleSubmit(async (data) => {
         setIsPending(true);
 
-        // TODO: Здесь добавить API вызов для отправки данных
-        console.log('Submitted data:', data);
+        try {
+            const response = await fetch('/api/submit-guest', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data),
+            });
 
-        // Пример: await Api.submitGuestForm(data)
-        //   .then(() => {
-        //     toast.success('Анкета отправлена');
-        //     onClose();
-        //   })
-        //   .catch(toast.error);
+            const result = await response.json();
 
-        setIsPending(false);
+            if (!response.ok) {
+                throw new Error(result.error || 'Произошла ошибка при отправке');
+            }
+
+            alert('✅ Анкета успешно отправлена!');
+            onClose();
+        } catch (error) {
+            console.error('Error submitting form:', error);
+            alert('❌ Ошибка при отправке анкеты. Попробуйте еще раз.');
+        } finally {
+            setIsPending(false);
+        }
     });
 
     return (
