@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { QuestionModal } from "./modals/question-modal";
-import { Button } from "flowbite-react";
+import { Button, ArrowRightIcon } from "flowbite-react";
 import { buttonTheme } from "../theme/button-theme";
 
 export function QuestProfile() {
@@ -17,11 +17,18 @@ export function QuestProfile() {
                 Ваши ответы на вопросы помогут на при организации торжества
             </p>
 
-            <Button size="lg" color="pink" theme={buttonTheme} className="mt-6" onClick={() => setOpenModal(true)}>
-                Заполнить анкету
-            </Button>
+            <div className="mt-6">
+                <Button size="lg" color="pink" theme={buttonTheme} onClick={() => setOpenModal(true)}>
+                    Заполнить анкету
+                </Button>
+                <div className="flex justify-center gap-3 animate-bounce text-pink-500 mt-6">
+                    <ArrowRightIcon className="w-6 h-6 -rotate-90" />
+                    <ArrowRightIcon className="w-6 h-6 -rotate-90" />
+                    <ArrowRightIcon className="w-6 h-6 -rotate-90" />
+                </div>
+            </div>
 
-            <p className="text-center text-lg mt-6">Будем ждать ответ до 01.04.2025</p>
+            <p className="text-center text-lg font-bold mt-6">Будем ждать ответ до 25 мая</p>
 
             {openModal && <QuestionModal onClose={() => setOpenModal(false)} />}
         </div>
