@@ -1,11 +1,12 @@
 'use client';
 
-import { Pagination } from 'swiper/modules';
+import { Pagination, Navigation } from 'swiper/modules';
 import { Swiper } from 'swiper/react';
 import type { ReactNode } from 'react';
 
 import 'swiper/css';
 import 'swiper/css/pagination';
+import 'swiper/css/navigation';
 
 interface CarouselProps {
   children: ReactNode;
@@ -31,13 +32,15 @@ export function Carousel({
 
       <div className="container py-0!">
         <Swiper
-          modules={[Pagination]}
+          initialSlide={1}
+          modules={[Pagination, Navigation]}
           spaceBetween={spaceBetween}
           slidesPerView={1}
           navigation
           pagination={{ clickable: true }}
           breakpoints={breakpoints}
-          className={className}>
+          className={className}
+        >
           {children}
         </Swiper>
       </div>

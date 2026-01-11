@@ -75,7 +75,7 @@ export function QuestionModal({ onClose }: QuestionModalProps) {
         <FormProvider {...formMethods}>
             <Modal dismissible show onClose={onClose}>
                 <ModalHeader className="border-gray-200">
-                    <h4 className="font-extrabold">Анкета гостя</h4>
+                    <span className="font-extrabold">Анкета гостя</span>
                 </ModalHeader>
                 <ModalBody>
                     <div className="space-y-4">
