@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 import { QuestionModal } from "./modals/question-modal";
+import { Button } from "flowbite-react";
+import { buttonTheme } from "../theme/button-theme";
 
 export function QuestProfile() {
     const [openModal, setOpenModal] = useState(false);
@@ -16,12 +18,9 @@ export function QuestProfile() {
             </p>
             <p className="text-center mt-6">Будем ждать ответ до 01.04.2025</p>
 
-            <button
-                className="py-4 px-6 bg-pink-100 rounded-2xl mt-6"
-                onClick={() => setOpenModal(true)}
-            >
+            <Button size="lg" color="pink" theme={buttonTheme} className="mt-6" onClick={() => setOpenModal(true)}>
                 Заполнить
-            </button>
+            </Button>
 
             {openModal && <QuestionModal onClose={() => setOpenModal(false)} />}
         </div>

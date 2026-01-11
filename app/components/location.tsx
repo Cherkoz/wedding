@@ -1,4 +1,6 @@
+import { Button } from "flowbite-react";
 import { CarouselLocation } from "./carousel-location";
+import { buttonTheme } from "../theme/button-theme";
 
 export function Location() {
     return (
@@ -16,7 +18,9 @@ export function Location() {
                 href="https://yandex.ru/maps/213/moscow/?ll=37.530430%2C55.670252&mode=poi&poi%5Bpoint%5D=37.528808%2C55.671122&poi%5Buri%5D=ymapsbm1%3A%2F%2Forg%3Foid%3D36700959360%26yclid%3D16656974419604799487&z=17.23"
                 target="_blanck"
             >
-            <button className="py-4 mx-auto px-6 bg-pink-100 rounded-2xl">Посмотреть на карте</button>
+                <Button size="lg" color="pink" theme={buttonTheme}>
+                    Посмотреть на карте
+                </Button>
             </a>
         </div>
     );
