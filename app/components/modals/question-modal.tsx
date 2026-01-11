@@ -185,21 +185,6 @@ export function QuestionModal({ onClose }: QuestionModalProps) {
                                         <>
                                             <div className="flex items-center gap-2">
                                                 <Checkbox
-                                                    id="alcohol-wine"
-                                                    checked={(field.value ?? []).includes('wine')}
-                                                    onChange={(e) => {
-                                                        const currentValue = field.value ?? [];
-                                                        if (e.target.checked) {
-                                                            field.onChange([...currentValue, 'wine']);
-                                                        } else {
-                                                            field.onChange(currentValue.filter((v) => v !== 'wine'));
-                                                        }
-                                                    }}
-                                                />
-                                                <Label htmlFor="alcohol-wine" className="text-base">Вино</Label>
-                                            </div>
-                                            <div className="flex items-center gap-2">
-                                                <Checkbox
                                                     id="alcohol-champagne"
                                                     checked={(field.value ?? []).includes('champagne')}
                                                     onChange={(e) => {
@@ -215,18 +200,18 @@ export function QuestionModal({ onClose }: QuestionModalProps) {
                                             </div>
                                             <div className="flex items-center gap-2">
                                                 <Checkbox
-                                                    id="alcohol-vodka"
-                                                    checked={(field.value ?? []).includes('vodka')}
+                                                    id="alcohol-wine"
+                                                    checked={(field.value ?? []).includes('wine')}
                                                     onChange={(e) => {
                                                         const currentValue = field.value ?? [];
                                                         if (e.target.checked) {
-                                                            field.onChange([...currentValue, 'vodka']);
+                                                            field.onChange([...currentValue, 'wine']);
                                                         } else {
-                                                            field.onChange(currentValue.filter((v) => v !== 'vodka'));
+                                                            field.onChange(currentValue.filter((v) => v !== 'wine'));
                                                         }
                                                     }}
                                                 />
-                                                <Label htmlFor="alcohol-vodka" className="text-base">Водка</Label>
+                                                <Label htmlFor="alcohol-wine" className="text-base">Вино</Label>
                                             </div>
                                             <div className="flex items-center gap-2">
                                                 <Checkbox
@@ -245,36 +230,6 @@ export function QuestionModal({ onClose }: QuestionModalProps) {
                                             </div>
                                             <div className="flex items-center gap-2">
                                                 <Checkbox
-                                                    id="alcohol-cognac"
-                                                    checked={(field.value ?? []).includes('cognac')}
-                                                    onChange={(e) => {
-                                                        const currentValue = field.value ?? [];
-                                                        if (e.target.checked) {
-                                                            field.onChange([...currentValue, 'cognac']);
-                                                        } else {
-                                                            field.onChange(currentValue.filter((v) => v !== 'cognac'));
-                                                        }
-                                                    }}
-                                                />
-                                                <Label htmlFor="alcohol-cognac" className="text-base">Коньяк</Label>
-                                            </div>
-                                            <div className="flex items-center gap-2">
-                                                <Checkbox
-                                                    id="alcohol-beer"
-                                                    checked={(field.value ?? []).includes('beer')}
-                                                    onChange={(e) => {
-                                                        const currentValue = field.value ?? [];
-                                                        if (e.target.checked) {
-                                                            field.onChange([...currentValue, 'beer']);
-                                                        } else {
-                                                            field.onChange(currentValue.filter((v) => v !== 'beer'));
-                                                        }
-                                                    }}
-                                                />
-                                                <Label htmlFor="alcohol-beer" className="text-base">Пиво</Label>
-                                            </div>
-                                            <div className="flex items-center gap-2">
-                                                <Checkbox
                                                     id="alcohol-none"
                                                     checked={(field.value ?? []).includes('none')}
                                                     onChange={(e) => {
@@ -286,7 +241,7 @@ export function QuestionModal({ onClose }: QuestionModalProps) {
                                                         }
                                                     }}
                                                 />
-                                                <Label htmlFor="alcohol-none" className="text-base">Не употребляю</Label>
+                                                <Label htmlFor="alcohol-none" className="text-base">Не пью</Label>
                                             </div>
                                         </>
                                     )}
@@ -307,7 +262,7 @@ export function QuestionModal({ onClose }: QuestionModalProps) {
                         className="w-full"
                         // isProcessing={isPending}
                     >
-                        Отправить
+                        Отправить анкету
                     </Button>
                 </ModalFooter>
             </Modal>
