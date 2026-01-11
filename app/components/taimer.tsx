@@ -37,9 +37,9 @@ export function Taimer() {
     return (
         <div className="bg-pink-100">
             <div className="container">
-                <h2 className="text-4xl text-center mb-6">До нашей встречи</h2>
+                <h2 className="text-6xl font-anastasia text-center mb-6">До нашей встречи</h2>
 
-                <div className="bg-white grid grid-cols-4 rounded-2xl p-6">
+                <div className="bg-white grid grid-cols-4 rounded-2xl p-6 max-w-[800px] mx-auto">
                     <div className="flex flex-col items-center">
                         <div className="text-4xl sm:text-6xl font-bold">{timeLeft.days}</div>
                         <div className="text-sm sm:text-base text-gray-600">дней</div>
@@ -58,7 +58,7 @@ export function Taimer() {
                     </div>
                 </div>
 
-                <p className="mt-6 text-center text-base">
+                <p className="mt-6 text-center text-lg">
                     С нетерпением ждем,<br />
                     Искренне ваши, Владислав и Валерия
                 </p>
