@@ -16,7 +16,7 @@ export function Hero() {
                 <Image src="/assets/images/hero-pink.png" className="-z-10 absolute -top-26 w-[803px] min-w-[803px] h-[540px]" width={803} height={540} alt="" />
                 
                 {/* Фото — показывается всегда как фон */}
-                {gifLoaded ?
+                {/* {gifLoaded ?
                     <Image
                         width={747}
                         height={1024}
@@ -25,14 +25,14 @@ export function Hero() {
                         className="w-50 h-70"
                         priority
                     />
-                :
+                : */}
                     <img
                         src="/assets/gifs/love.gif"
                         className="w-50 h-70"
                         alt=""
                         onLoad={() => setGifLoaded(true)}
                     />
-                }
+                {/* } */}
 
                 <div className="font-anastasia text-4xl mt-2 -ml-3">Мы женимся!</div>
             </div>
