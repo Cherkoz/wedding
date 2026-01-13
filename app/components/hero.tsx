@@ -1,6 +1,11 @@
+"use client";
+
 import Image from "next/image";
+import { useState } from "react";
 
 export function Hero() {
+    const [gifLoaded, setGifLoaded] = useState(false);
+
     return (
         <div className="container overflow-hidden min-h-screen flex justify-center flex-col items-center gap-1">
             <h1 className="leading-[0.9] flex flex-col text-4xl md:text-6xl text-brown text-center mb-2 md:block">
@@ -9,7 +14,26 @@ export function Hero() {
 
             <div className="relative flex flex-col items-center bg-white p-1 shadow w-fit">
                 <Image src="/assets/images/hero-pink.png" className="-z-10 absolute -top-26 w-[803px] min-w-[803px] h-[540px]" width={803} height={540} alt="" />
-                <Image src="/assets/images/love.jpg" width={747} height={1024} alt="" className="w-50 h-70" />
+                
+                {/* Фото — показывается всегда как фон */}
+                {gifLoaded ?
+                    <Image
+                        width={747}
+                        height={1024}
+                        src="/assets/images/love.jpg"
+                        alt=""
+                        className="w-50 h-70"
+                        priority
+                    />
+                :
+                    <img
+                        src="/assets/gifs/love.gif"
+                        className="w-50 h-70"
+                        alt=""
+                        onLoad={() => setGifLoaded(true)}
+                    />
+                }
+
                 <div className="font-anastasia text-4xl mt-2 -ml-3">Мы женимся!</div>
             </div>
 
