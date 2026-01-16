@@ -8,7 +8,7 @@ export function Hero() {
 
     return (
         <div className="container overflow-hidden min-h-screen flex justify-center flex-col items-center gap-1">
-            <h1 className="leading-[0.9] flex flex-col text-4xl md:text-6xl text-brown text-center mb-2 md:block">
+            <h1 className="leading-[0.9] flex flex-col text-4xl md:text-6xl text-primary text-center mb-2 md:block">
                 Владислав <span>+</span> Валерия
             </h1>
 

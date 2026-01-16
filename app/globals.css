@@ -11,11 +11,12 @@
 
 :root {
   --background: #fffbf8;
-  --foreground: #171717;
+  --foreground: #69443c;
 }
 
 @theme {
-  --color-brown: #69443c;
+  --color-primary: #69443c;
+  --color-second: #efcac9;
 }
 
 body {
