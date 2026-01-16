@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { useState, useEffect } from 'react';
 
 export function Taimer() {
@@ -35,30 +36,32 @@ export function Taimer() {
     }, []);
 
     return (
-        <div className="bg-pink-100">
+        <div className="bg-[url('/assets/images/bg/s3.webp')] bg-cover bg-bottom">
+            {/* <Image className="absolute w-full" src="/assets/images/bg/s3.webp" width={200} height={200} alt="" /> */}
+
             <div className="container">
                 <h2 className="text-6xl font-anastasia text-center mb-6">До нашей встречи</h2>
 
                 <div className="bg-white grid grid-cols-4 rounded-2xl p-6 max-w-[800px] mx-auto">
                     <div className="flex flex-col items-center">
                         <div className="text-4xl sm:text-6xl font-bold">{timeLeft.days}</div>
-                        <div className="text-sm sm:text-base text-gray-600">дней</div>
+                        <div className="text-base sm:text-lg">дней</div>
                     </div>
                     <div className="flex flex-col items-center">
                         <div className="text-4xl sm:text-6xl font-bold">{timeLeft.hours}</div>
-                        <div className="text-sm sm:text-base text-gray-600">часов</div>
+                        <div className="text-base sm:text-lg">часов</div>
                     </div>
                     <div className="flex flex-col items-center">
                         <div className="text-4xl sm:text-6xl font-bold">{timeLeft.minutes}</div>
-                        <div className="text-sm sm:text-base text-gray-600">минут</div>
+                        <div className="text-base sm:text-lg">минут</div>
                     </div>
                     <div className="flex flex-col items-center">
                         <div className="text-4xl sm:text-6xl font-bold">{timeLeft.seconds}</div>
-                        <div className="text-sm sm:text-base text-gray-600">секунд</div>
+                        <div className="text-base sm:text-lg">секунд</div>
                     </div>
                 </div>
 
-                <p className="mt-6 text-center text-lg">
+                <p className="mt-6 text-center text-lg font-bold">
                     С нетерпением ждем,<br />
                     Искренне ваши, Владислав и Валерия
                 </p>

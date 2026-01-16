@@ -2,7 +2,7 @@ import { Calendar, Dear, Details, DressCode, Hero, Location, Program, QuestProfi
 
 export default function Home() {
   return (
-    <main>
+    <main className="max-w-[100vw] overflow-hidden">
       <Hero />
       <We />
       <Dear />
