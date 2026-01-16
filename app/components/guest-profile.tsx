@@ -3,7 +3,6 @@
 import { useState } from "react";
 import { QuestionModal } from "./modals/question-modal";
 import { Button, ArrowRightIcon } from "flowbite-react";
-import { buttonTheme } from "../theme/button-theme";
 
 export function QuestProfile() {
     const [openModal, setOpenModal] = useState(false);
@@ -18,10 +17,10 @@ export function QuestProfile() {
             </p>
 
             <div className="mt-6">
-                <Button size="lg" color="pink" theme={buttonTheme} onClick={() => setOpenModal(true)}>
+                <Button size="lg" color="brown" onClick={() => setOpenModal(true)}>
                     Заполнить анкету
                 </Button>
-                <div className="flex justify-center gap-3 animate-bounce text-pink-500 mt-6">
+                <div className="flex justify-center gap-3 animate-bounce text-second mt-6">
                     <ArrowRightIcon className="w-6 h-6 -rotate-90" />
                     <ArrowRightIcon className="w-6 h-6 -rotate-90" />
                     <ArrowRightIcon className="w-6 h-6 -rotate-90" />

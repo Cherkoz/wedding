@@ -29,20 +29,20 @@ export function Program() {
         <div className="flex flex-col items-start w-fit m-auto">
             {items.map((item, i) => (
                 <div key={i} className="group flex gap-x-6">
-                    <div className="-mt-2.5 text-xl text-pink-500 font-bold">{item.time}</div>
+                    <div className="-mt-2.5 text-xl font-bold">{item.time}</div>
 
                     <div className="relative">
                         {i !== items.length - 1 && (
-                            <div className="absolute left-1/2 top-0 h-full w-0.5 -translate-x-1/2 bg-pink-200"></div>
+                            <div className="absolute left-1/2 top-0 h-full w-0.5 -translate-x-1/2 bg-second"></div>
                         )}
-                        <span className="relative z-10 grid h-3 w-3 place-items-center rounded-full bg-pink-200 text-slate-800"></span>
+                        <span className="relative z-10 grid h-3 w-3 place-items-center rounded-full bg-second"></span>
                     </div>
 
-                    <div className="-translate-y-2.5 pb-8 text-pink-600">
-                        <p className="font-sans text-xl font-bold text-slate-800 antialiased">
+                    <div className="-translate-y-2.5 pb-8">
+                        <p className="text-xl font-bold  antialiased">
                             {item.title}
                         </p>
-                        <small className="mt-2 font-sans text-base text-slate-600 antialiased">
+                        <small className="mt-2 text-base antialiased">
                             {item.description}
                         </small>
                     </div>

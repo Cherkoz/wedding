@@ -1,6 +1,5 @@
 import { Button } from "flowbite-react";
 import Image from "next/image";
-import { buttonTheme } from "../theme/button-theme";
 
 export function Details() {
     return (
@@ -27,11 +26,11 @@ export function Details() {
                         <h3 className="text-2xl font-extrabold mb-2">Чат для гостей</h3>
                         <p className="text-xl">Мы создали группу в Telegram. куда можно будет добавлять фото и видео с нашей свадьбы, чтобы сохранить в памяти лучшие моменты</p>
                         <a href="https://t.me/+RcCINPM2_Gs1YzI6" target="_blanck" className="block mt-6">
-                            <Button color="pink" theme={buttonTheme}>
+                            <Button color="brown" outline>
                                 Вступить в чат
                             </Button>
                         </a>
-                        
+
                     </div>
                 </div>
             </div>

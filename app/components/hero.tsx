@@ -39,7 +39,6 @@ export function Hero() {
 
             <div className="text-center font-anastasia text-4xl leading-[0.9] -ml-3">
                 <div>27.06.2026</div>
-                <div>17:00</div>
             </div>
         </div>
     );
