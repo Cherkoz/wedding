@@ -7,4 +7,5 @@ export * from './hero';
 export * from './location';
 export * from './program';
 export * from './taimer';
+export * from './visit-tracker';
 export * from './we';
