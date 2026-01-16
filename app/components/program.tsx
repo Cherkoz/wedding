@@ -25,6 +25,7 @@ export function Program() {
     ];
   
     return (
+      <div className="relative overflow-hidden">
       <div className="container">
         <Image className="-z-10 absolute w-100 rotate-180 -left-60 md:-left-50 -mt-80 md:-mt-50" src="/assets/images/bg/width_175.webp" width={200} height={200} alt="" />
         <Image className="-z-10 absolute w-100 rotate-200 -right-40 md:-right-30 mt-40 md:mt-20" src="/assets/images/bg/width_175.webp" width={200} height={200} alt="" />
@@ -54,6 +55,7 @@ export function Program() {
                 </div>
             ))}
         </div>
+      </div>
       </div>
     );
   }
