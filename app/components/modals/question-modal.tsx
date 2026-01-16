@@ -260,6 +260,7 @@ export function QuestionModal({ onClose }: QuestionModalProps) {
                         disabled={isPending}
                         onClick={submit}
                         className="w-full"
+                        color="brown"
                         // isProcessing={isPending}
                     >
                         Отправить анкету
