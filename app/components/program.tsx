@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export function Program() {
     const items = [
       {
@@ -24,6 +26,9 @@ export function Program() {
   
     return (
       <div className="container">
+        <Image className="-z-10 absolute w-100 rotate-180 -left-60 md:-left-50 -mt-80 md:-mt-50" src="/assets/images/bg/width_175.webp" width={200} height={200} alt="" />
+        <Image className="-z-10 absolute w-100 rotate-200 -right-40 md:-right-30 mt-40 md:mt-20" src="/assets/images/bg/width_175.webp" width={200} height={200} alt="" />
+
         <h2 className="font-anastasia text-6xl text-center mb-6">Программа</h2>
         
         <div className="flex flex-col items-start w-fit m-auto">
