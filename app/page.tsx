@@ -29,7 +29,9 @@ export default function Home() {
         <DressCode />
       </FadeIn>
       <FadeIn>
-        <QuestProfile />
+        <Suspense fallback={null}>
+          <QuestProfile />
+        </Suspense>
       </FadeIn>
       <FadeIn>
         <Details />

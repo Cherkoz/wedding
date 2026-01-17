@@ -3,10 +3,14 @@ import { NextRequest, NextResponse } from 'next/server';
 const TELEGRAM_BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN;
 const TELEGRAM_CHAT_ID = process.env.TELEGRAM_CHAT_ID;
 
-interface GuestFormData {
+interface GuestData {
     fullName: string;
     attendance: 'yes' | 'no';
     alcoholPreferences: string[];
+}
+
+interface GuestFormData {
+    guests: GuestData[];
 }
 
 const alcoholLabels: Record<string, string> = {
@@ -24,11 +28,21 @@ export async function POST(request: NextRequest) {
         const data: GuestFormData = await request.json();
 
         // Валидация данных
-        if (!data.fullName || !data.attendance || !data.alcoholPreferences?.length) {
+        if (!data.guests || !Array.isArray(data.guests) || data.guests.length === 0) {
             return NextResponse.json(
-                { error: 'Все поля обязательны для заполнения' },
+                { error: 'Данные гостей отсутствуют' },
                 { status: 400 }
             );
+        }
+
+        // Валидация каждого гостя
+        for (const guest of data.guests) {
+            if (!guest.fullName || !guest.attendance || !guest.alcoholPreferences?.length) {
+                return NextResponse.json(
+                    { error: 'Все поля обязательны для заполнения для каждого гостя' },
+                    { status: 400 }
+                );
+            }
         }
 
         // Проверка переменных окружения
@@ -40,21 +54,28 @@ export async function POST(request: NextRequest) {
             );
         }
 
-        // Форматируем сообщение для Telegram
-        const alcoholPrefs = data.alcoholPreferences
-            .map(pref => alcoholLabels[pref] || pref)
-            .join(', ');
+        // Форматируем сообщение для Telegram с информацией о всех гостях
+        const guestsInfo = data.guests.map((guest, index) => {
+            const alcoholPrefs = guest.alcoholPreferences
+                .map(pref => alcoholLabels[pref] || pref)
+                .join(', ');
 
-        const attendanceText = data.attendance === 'yes'
-            ? '✅ Обязательно буду'
-            : '❌ К сожалению, не смогу присутствовать';
+            const attendanceText = guest.attendance === 'yes'
+                ? '✅ Обязательно буду'
+                : '❌ К сожалению, не смогу присутствовать';
 
-        const message = `
-🎉 <b>Новая анкета гостя</b>
-
-👤 <b>ФИО:</b> ${data.fullName}
+            return `
+<b>Гость ${index + 1}:</b>
+👤 <b>ФИО:</b> ${guest.fullName}
 📍 <b>Присутствие:</b> ${attendanceText}
 🍷 <b>Предпочтения по алкоголю:</b> ${alcoholPrefs}
+            `.trim();
+        }).join('\n\n');
+
+        const message = `
+🎉 <b>Новая анкета гостя${data.guests.length > 1 ? ' (семья)' : ''}</b>
+
+${guestsInfo}
         `.trim();
 
         // Отправляем сообщение в Telegram

@@ -1,11 +1,36 @@
 'use client';
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useSearchParams } from "next/navigation";
 import { QuestionModal } from "./modals/question-modal";
 import { Button, ArrowRightIcon } from "flowbite-react";
 
+interface Family {
+    id: number;
+    title: string;
+    members: string[];
+}
+
 export function QuestProfile() {
     const [openModal, setOpenModal] = useState(false);
+    const [guestNames, setGuestNames] = useState<string[]>([]);
+    const searchParams = useSearchParams();
+
+    useEffect(() => {
+        const familyId = searchParams?.get('familyId');
+        if (familyId) {
+            fetch(`/api/get-family?familyId=${familyId}`)
+                .then(response => response.json())
+                .then((data: Family) => {
+                    if (data.members) {
+                        setGuestNames(data.members);
+                    }
+                })
+                .catch(error => {
+                    console.error('Error loading family data:', error);
+                });
+        }
+    }, [searchParams]);
 
     return (
         <div className="container flex flex-col items-center">
@@ -29,7 +54,7 @@ export function QuestProfile() {
 
             <p className="text-center text-2xl font-bold mt-6">Будем ждать ответ до 25 мая</p>
 
-            {openModal && <QuestionModal onClose={() => setOpenModal(false)} />}
+            {openModal && <QuestionModal onClose={() => setOpenModal(false)} guestNames={guestNames} />}
         </div>
     );
 }
