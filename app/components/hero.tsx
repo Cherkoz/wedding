@@ -26,12 +26,12 @@ export function Hero() {
                         priority
                     />
                 : */}
-                    <img
+                    {/* <img
                         src="/assets/gifs/love.gif"
                         className="w-50 h-70"
                         alt=""
                         onLoad={() => setGifLoaded(true)}
-                    />
+                    /> */}
                 {/* } */}
 
                 <div className="font-anastasia text-4xl mt-2 -ml-3">Мы женимся!</div>
