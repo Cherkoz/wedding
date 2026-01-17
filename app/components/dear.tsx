@@ -12,7 +12,7 @@ export function Dear() {
                 <br className="md:hidden" /> и родные
             </h2>
 
-            <div className="flex flex-col gap-6 text-center text-xl">
+            <div className="flex flex-col gap-6 text-center text-2xl">
                 <p>Совсем скоро в нашей жизни произойдет очень важное событие - наша свадьба!</p>
                 <p>
                     Мы с радостью приглашаем вас разделить с нами

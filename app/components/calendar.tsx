@@ -10,8 +10,8 @@ export function Calendar() {
                 Дата бракосочетания
             </h2>
 
-            <p className="text-center font-extrabold text-xl mb-2">Июнь</p>
-            <div className="w-full grid grid-cols-7 gap-2 max-w-[800px] mx-auto text-xl">
+            <p className="text-center font-extrabold text-2xl mb-2">Июнь</p>
+            <div className="w-full grid grid-cols-7 gap-2 max-w-[800px] mx-auto text-2xl">
                 <div className={textStyle}>пн</div>
                 <div className={textStyle}>вт</div>
                 <div className={textStyle}>ср</div>

@@ -11,7 +11,7 @@ export function QuestProfile() {
         <div className="container flex flex-col items-center">
             <h2 className="mb-6 text-center text-6xl font-anastasia">Анкета гостя</h2>
 
-            <p className="text-center text-xl">
+            <p className="text-center text-2xl">
                 Пожалуйста, перейдите к анкете, нажав на кнопку ниже.<br />
                 Ваши ответы на вопросы помогут на при организации торжества
             </p>
@@ -27,7 +27,7 @@ export function QuestProfile() {
                 </div>
             </div>
 
-            <p className="text-center text-lg font-bold mt-6">Будем ждать ответ до 25 мая</p>
+            <p className="text-center text-2xl font-bold mt-6">Будем ждать ответ до 25 мая</p>
 
             {openModal && <QuestionModal onClose={() => setOpenModal(false)} />}
         </div>

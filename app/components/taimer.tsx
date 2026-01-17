@@ -61,7 +61,7 @@ export function Taimer() {
                     </div>
                 </div>
 
-                <p className="mt-6 text-center text-lg font-bold">
+                <p className="mt-6 text-center text-2xl font-bold">
                     С нетерпением ждем,<br />
                     Искренне ваши, Владислав и Валерия
                 </p>

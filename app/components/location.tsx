@@ -5,8 +5,8 @@ export function Location() {
     return (
         <div className="container flex flex-col items-center gap-6 w-full relative max-w-screen! overflow-x-hidden">
             <h2 className="font-anastasia text-6xl text-center">Локация</h2>
-            <p className="text-center text-xl">
-                <span className="font-extrabold text-2xl">Ресторан Catch,</span><br />
+            <p className="text-center text-2xl">
+                <span className="font-extrabold text-3xl">Ресторан Catch,</span><br />
                 ул. Академика Пилюгина, 3, Москва
             </p>
             <CarouselLocation />

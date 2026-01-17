@@ -35,7 +35,7 @@ export function Program() {
         <div className="flex flex-col items-start w-fit m-auto">
             {items.map((item, i) => (
                 <div key={i} className="group flex gap-x-6">
-                    <div className="-mt-2.5 text-xl font-bold">{item.time}</div>
+                    <div className="-mt-3.5 text-2xl font-bold">{item.time}</div>
 
                     <div className="relative">
                         {i !== items.length - 1 && (
@@ -45,10 +45,10 @@ export function Program() {
                     </div>
 
                     <div className="-translate-y-2.5 pb-8">
-                        <p className="text-xl font-bold">
+                        <p className="text-2xl font-bold">
                             {item.title}
                         </p>
-                        <small className="mt-2 text-base">
+                        <small className="mt-2 text-xl">
                             {item.description}
                         </small>
                     </div>

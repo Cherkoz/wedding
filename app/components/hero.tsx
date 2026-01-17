@@ -8,7 +8,7 @@ export function Hero() {
 
     return (
         <div className="container overflow-hidden min-h-screen flex justify-center flex-col items-center gap-1">
-            <h1 className="leading-[0.9] flex flex-col text-4xl md:text-6xl text-primary text-center mb-2 md:block">
+            <h1 className="leading-[0.9] flex flex-col text-4xl md:text-6xl text-primary text-center mb-4 md:block">
                 Владислав <span>+</span> Валерия
             </h1>
 
@@ -37,7 +37,7 @@ export function Hero() {
                 <div className="font-anastasia text-4xl mt-2 -ml-3">Мы женимся!</div>
             </div>
 
-            <div className="text-center font-anastasia text-4xl leading-[0.9] -ml-3">
+            <div className="text-center mt-2 font-anastasia text-4xl leading-[0.9] -ml-3">
                 <div>27.06.2026</div>
             </div>
         </div>
