@@ -2,7 +2,13 @@ import { CustomFlowbiteTheme } from "flowbite-react/types";
 
 export const customTheme: CustomFlowbiteTheme = {
   button: {
-    base: "relative flex items-center justify-center rounded-lg text-center font-medium focus:outline-none focus:ring-4 font-bold cursor-pointer",
+    size: {
+      xs: "px-2 py-1 text-xl",
+      sm: "px-3 py-1.5 text-xl",
+      md: "px-4 py-2 text-xl",
+      lg: "px-5 py-2.5 text-xl",
+      xl: "px-6 py-3 text-xl",
+    },
     color: {
       brown: "bg-[#69443c] text-white hover:opacity-80",
     },
