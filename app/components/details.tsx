@@ -18,7 +18,9 @@ export function Details() {
                         <h3 className="text-2xl font-extrabold mb-2">Контакты</h3>
                         <p className="text-xl">
                             По возникающим вопросам можете обращаться по номеру телефона невесты <br/>
-                            <a className="font-extrabold">+7 (977) 415 96 46</a>
+                            <a href="tel:+79774159646" className="font-extrabold">
+                                +7 (977) 415-96-46
+                            </a>
                         </p>
                     </div>
 

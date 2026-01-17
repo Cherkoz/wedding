@@ -22,7 +22,7 @@ export default function Home() {
       <FadeIn>
         <Location />
       </FadeIn>
-      <FadeIn>
+      <FadeIn className="-z-10 relative">
         <Program />
       </FadeIn>
       <FadeIn>

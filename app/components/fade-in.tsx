@@ -13,6 +13,8 @@ export function FadeIn({ children, className = "", delay = 0 }: FadeInProps) {
   const elementRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    const isMobile = window.matchMedia("(max-width: 768px)").matches;
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -21,7 +23,7 @@ export function FadeIn({ children, className = "", delay = 0 }: FadeInProps) {
         }
       },
       {
-        threshold: 0.4,
+        threshold: isMobile ? 0.2 : 0.4,
         rootMargin: "0px 0px -50px 0px",
       }
     );

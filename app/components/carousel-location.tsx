@@ -20,17 +20,8 @@ export function CarouselLocation() {
         },
     ];
 
-    const breakpoints = {
-        768: {
-          slidesPerView: 1,
-        },
-        1024: {
-          slidesPerView: 2,
-        },
-      };
-
     return (
-        <Carousel breakpoints={breakpoints}>
+        <Carousel>
             {items.map((item) => (
                  <SwiperSlide key={item.id} className="h-auto!">
                     <div className="relative aspect-video overflow-hidden rounded-2xl">

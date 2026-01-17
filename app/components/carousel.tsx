@@ -10,21 +10,26 @@ import 'swiper/css/navigation';
 
 interface CarouselProps {
   children: ReactNode;
-  breakpoints: {
-    [key: number]: {
-      slidesPerView: number;
-    };
-  };
   spaceBetween?: number;
   className?: string;
 }
 
 export function Carousel({
   children,
-  breakpoints,
   spaceBetween = 24,
   className = 'overflow-visible! pb-16.5!',
 }: CarouselProps) {
+  const breakpoints = {
+    768: {
+      slidesPerView: 1,
+      loop: false,
+    },
+    1024: {
+      slidesPerView: 2,
+      loop: false,
+    },
+  };
+
   return (
     <div className="">
       <div className="dark:from-background dark:to-background/0 absolute top-0 left-0 z-50 h-full w-4 bg-gradient-to-r from-white to-white/0 md:w-10 xl:w-[calc((100%-1280px)/2)]"></div>
@@ -35,10 +40,11 @@ export function Carousel({
           modules={[Pagination, Navigation]}
           spaceBetween={spaceBetween}
           slidesPerView={1}
+          loop={true}
           navigation
           pagination={{ clickable: true }}
-          breakpoints={breakpoints}
           className={className}
+          breakpoints={breakpoints}
         >
           {children}
         </Swiper>
