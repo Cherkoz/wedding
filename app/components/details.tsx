@@ -10,8 +10,8 @@ export function Details() {
                 <Image src="/assets/images/details.jpeg" width={1000} height={1000} alt="" className="w-full" />
                 <div>
                     <div className="border-b border-amber-950 pb-2 mb-4">
-                        <h3 className="text-2xl font-extrabold mb-2">Подарки</h3>
-                        <p className="text-xl">Ваше присутствие - лучший подарок, но если вы захотите сделать еще что-то, будем рады конвертику</p>
+                        <h3 className="text-2xl font-bold mb-2">Подарки</h3>
+                        <p className="text-xl text-bold">Ваше присутствие - лучший подарок, но если вы захотите сделать еще что-то, будем рады конвертику</p>
                     </div>
 
                     <div className="border-b border-amber-950 pb-2 mb-4">

@@ -45,10 +45,10 @@ export function Program() {
                     </div>
 
                     <div className="-translate-y-2.5 pb-8">
-                        <p className="text-xl font-bold  antialiased">
+                        <p className="text-xl font-bold">
                             {item.title}
                         </p>
-                        <small className="mt-2 text-base antialiased">
+                        <small className="mt-2 text-base">
                             {item.description}
                         </small>
                     </div>
