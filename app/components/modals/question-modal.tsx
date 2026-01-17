@@ -41,12 +41,12 @@ export function QuestionModal({ onClose, guestNames = [] }: QuestionModalProps) 
     const initialGuests = hasMultipleGuests
         ? guestNames.map(name => ({
             fullName: name,
-            attendance: 'yes',
+            attendance: '',
             alcoholPreferences: [],
         }))
         : [{
             fullName: '',
-            attendance: 'yes',
+            attendance: '',
             alcoholPreferences: [],
         }];
 
