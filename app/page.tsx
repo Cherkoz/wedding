@@ -1,5 +1,5 @@
 import { Suspense } from "react";
-import { Calendar, Dear, Details, DressCode, Hero, Location, Program, QuestProfile, Taimer, VisitTracker, We } from "./components";
+import { Calendar, Dear, Details, DressCode, FadeIn, Hero, Location, Program, QuestProfile, Taimer, VisitTracker, We } from "./components";
 
 export default function Home() {
   return (
@@ -7,16 +7,36 @@ export default function Home() {
       <Suspense fallback={null}>
         <VisitTracker />
       </Suspense>
-      <Hero />
-      <We />
-      <Dear />
-      <Calendar />
-      <Location />
-      <Program />
-      <DressCode />
-      <QuestProfile />
-      <Details />
-      <Taimer />
+      <FadeIn>
+        <Hero />
+      </FadeIn>
+      <FadeIn>
+        <We />
+      </FadeIn>
+      <FadeIn>
+        <Dear />
+      </FadeIn>
+      <FadeIn>
+        <Calendar />
+      </FadeIn>
+      <FadeIn>
+        <Location />
+      </FadeIn>
+      <FadeIn>
+        <Program />
+      </FadeIn>
+      <FadeIn>
+        <DressCode />
+      </FadeIn>
+      <FadeIn>
+        <QuestProfile />
+      </FadeIn>
+      <FadeIn>
+        <Details />
+      </FadeIn>
+      <FadeIn>
+        <Taimer />
+      </FadeIn>
     </main>
   );
 }

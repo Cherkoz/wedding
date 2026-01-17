@@ -2,6 +2,7 @@ export * from './calendar';
 export * from './dear';
 export * from './details';
 export * from './dress-code';
+export * from './fade-in';
 export * from './guest-profile';
 export * from './hero';
 export * from './location';
