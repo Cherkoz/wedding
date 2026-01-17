@@ -6,7 +6,6 @@ const TELEGRAM_CHAT_ID = process.env.TELEGRAM_CHAT_ID;
 interface GuestFormData {
     fullName: string;
     attendance: 'yes' | 'no';
-    guestCount: '1' | 'plus-one';
     alcoholPreferences: string[];
 }
 
@@ -25,7 +24,7 @@ export async function POST(request: NextRequest) {
         const data: GuestFormData = await request.json();
 
         // Валидация данных
-        if (!data.fullName || !data.attendance || !data.guestCount || !data.alcoholPreferences?.length) {
+        if (!data.fullName || !data.attendance || !data.alcoholPreferences?.length) {
             return NextResponse.json(
                 { error: 'Все поля обязательны для заполнения' },
                 { status: 400 }
@@ -50,16 +49,11 @@ export async function POST(request: NextRequest) {
             ? '✅ Обязательно буду'
             : '❌ К сожалению, не смогу присутствовать';
 
-        const guestCountText = data.guestCount === '1'
-            ? '1 гость'
-            : '+1 гость';
-
         const message = `
 🎉 <b>Новая анкета гостя</b>
 
 👤 <b>ФИО:</b> ${data.fullName}
 📍 <b>Присутствие:</b> ${attendanceText}
-👥 <b>Количество гостей:</b> ${guestCountText}
 🍷 <b>Предпочтения по алкоголю:</b> ${alcoholPrefs}
         `.trim();
 

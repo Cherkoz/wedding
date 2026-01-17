@@ -21,9 +21,6 @@ export function QuestionModal({ onClose }: QuestionModalProps) {
         attendance: Yup.string()
             .required('Обязательное поле')
             .oneOf(['yes', 'no'], 'Выберите один из вариантов'),
-        guestCount: Yup.string()
-            .required('Обязательное поле')
-            .oneOf(['1', 'plus-one'], 'Выберите один из вариантов'),
         alcoholPreferences: Yup.array()
             .of(Yup.string())
             .min(1, 'Выберите хотя бы один вариант'),
@@ -35,8 +32,7 @@ export function QuestionModal({ onClose }: QuestionModalProps) {
         resolver: yupResolver(formSchema),
         defaultValues: {
             fullName: '',
-            attendance: '',
-            guestCount: '',
+            attendance: 'yes',
             alcoholPreferences: [],
         },
     });
@@ -75,7 +71,7 @@ export function QuestionModal({ onClose }: QuestionModalProps) {
         <FormProvider {...formMethods}>
             <Modal dismissible show onClose={onClose}>
                 <ModalHeader className="border-gray-200">
-                    <span className="font-extrabold">Анкета гостя</span>
+                    <span className="font-extrabold text-3xl">Анкета гостя</span>
                 </ModalHeader>
                 <ModalBody>
                     <div className="space-y-4">
@@ -134,43 +130,6 @@ export function QuestionModal({ onClose }: QuestionModalProps) {
                             {errors.attendance && (
                                 <p className="mt-1 text-base text-red-600">
                                     {errors.attendance.message}
-                                </p>
-                            )}
-                        </div>
-
-                        <div>
-                            <Label className="mb-2 block text-base font-extrabold">Количество гостей</Label>
-                            <div className="flex flex-col gap-2">
-                                <Controller
-                                    name="guestCount"
-                                    control={control}
-                                    render={({ field }) => (
-                                        <>
-                                            <div className="flex items-center gap-2">
-                                                <Radio
-                                                    id="guest-count-1"
-                                                    {...field}
-                                                    value="1"
-                                                    checked={field.value === '1'}
-                                                />
-                                                <Label htmlFor="guest-count-1" className="text-base">1 гость</Label>
-                                            </div>
-                                            <div className="flex items-center gap-2">
-                                                <Radio
-                                                    id="guest-count-plus-one"
-                                                    {...field}
-                                                    value="plus-one"
-                                                    checked={field.value === 'plus-one'}
-                                                />
-                                                <Label htmlFor="guest-count-plus-one" className="text-base">+1 гость</Label>
-                                            </div>
-                                        </>
-                                    )}
-                                />
-                            </div>
-                            {errors.guestCount && (
-                                <p className="mt-1 text-base text-red-600">
-                                    {errors.guestCount.message}
                                 </p>
                             )}
                         </div>
