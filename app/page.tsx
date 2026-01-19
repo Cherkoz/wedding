@@ -7,35 +7,35 @@ export default function Home() {
       <Suspense fallback={null}>
         <VisitTracker />
       </Suspense>
-      <FadeIn>
+      {/* <FadeIn>
         <Hero />
-      </FadeIn>
+      </FadeIn> */}
       <FadeIn>
         <We />
       </FadeIn>
       <FadeIn>
         <Dear />
       </FadeIn>
-      <FadeIn>
+      {/* <FadeIn>
         <Calendar />
-      </FadeIn>
-      <FadeIn>
+      </FadeIn> */}
+      {/* <FadeIn>
         <Location />
-      </FadeIn>
+      </FadeIn> */}
       <FadeIn className="-z-10 relative">
         <Program />
       </FadeIn>
-      <FadeIn>
+      {/* <FadeIn>
         <DressCode />
-      </FadeIn>
-      <FadeIn>
+      </FadeIn> */}
+      {/* <FadeIn>
         <Suspense fallback={null}>
           <QuestProfile />
         </Suspense>
-      </FadeIn>
-      <FadeIn>
+      </FadeIn> */}
+      {/* <FadeIn>
         <Details />
-      </FadeIn>
+      </FadeIn> */}
       <FadeIn>
         <Taimer />
       </FadeIn>
