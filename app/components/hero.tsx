@@ -7,13 +7,13 @@ export function Hero() {
     const [gifLoaded, setGifLoaded] = useState(false);
 
     return (
-        <div className="container overflow-hidden min-h-screen flex justify-center flex-col items-center gap-1">
-            {/* <h1 className="leading-[0.9] flex text-4xl gap-1 md:text-6xl text-primary text-center mb-4 md:block">
+        <div className="container py-20! overflow-hidden lg:min-h-screen flex justify-center flex-col items-center gap-1">
+            <h1 className="leading-[0.9] flex text-4xl gap-1 md:text-6xl text-primary text-center mb-4 md:block">
                 Владислав <span>+</span> Валерия
             </h1>
 
-            <div className="relative flex flex-col items-center bg-white p-1 shadow w-fit"> */}
-                {/* <Image src="/assets/images/hero-pink.png" className="-z-10 absolute -top-26 w-[803px] min-w-[803px] h-[540px]" width={803} height={540} alt="" /> */}
+            <div className="relative flex flex-col items-center bg-white p-1 shadow w-fit">
+                <Image src="/assets/images/hero-pink.png" className="-z-10 absolute -top-26 w-[803px] min-w-[803px] h-[540px]" width={803} height={540} alt="" />
                 {/* Фото — показывается всегда как фон */}
                 {/* {gifLoaded && (
                     <Image
@@ -33,12 +33,12 @@ export function Hero() {
                         // onLoad={() => setGifLoaded(true)}
                     /> 
                 {/* )} */}
-                {/* <div className="font-anastasia text-4xl mt-2 -ml-3">Мы женимся!</div>
+                <div className="font-anastasia text-4xl mt-2 -ml-3">Мы женимся!</div>
             </div>
 
             <div className="text-center mt-2 font-anastasia text-4xl leading-[0.9] -ml-3">
                 <div>27.06.2026</div>
-            </div> */}
+            </div>
         </div>
     );
 }
