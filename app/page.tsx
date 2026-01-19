@@ -16,26 +16,26 @@ export default function Home() {
       <FadeIn>
         <Dear />
       </FadeIn>
-      {/* <FadeIn>
+      <FadeIn>
         <Calendar />
-      </FadeIn> */}
+      </FadeIn>
       {/* <FadeIn>
         <Location />
       </FadeIn> */}
       <FadeIn className="-z-10 relative">
         <Program />
       </FadeIn>
-      {/* <FadeIn>
+      <FadeIn>
         <DressCode />
-      </FadeIn> */}
+      </FadeIn>
       {/* <FadeIn>
         <Suspense fallback={null}>
           <QuestProfile />
         </Suspense>
       </FadeIn> */}
-      {/* <FadeIn>
+      <FadeIn>
         <Details />
-      </FadeIn> */}
+      </FadeIn>
       <FadeIn>
         <Taimer />
       </FadeIn>
