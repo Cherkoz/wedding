@@ -7,9 +7,9 @@ export default function Home() {
       <Suspense fallback={null}>
         <VisitTracker />
       </Suspense>
-      <FadeIn>
+      {/* <FadeIn>
         <Hero />
-      </FadeIn>
+      </FadeIn> */}
       <FadeIn>
         <We />
       </FadeIn>
