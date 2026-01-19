@@ -28,11 +28,11 @@ export default function Home() {
       <FadeIn>
         <DressCode />
       </FadeIn>
-      {/* <FadeIn>
+      <FadeIn>
         <Suspense fallback={null}>
           <QuestProfile />
         </Suspense>
-      </FadeIn> */}
+      </FadeIn>
       <FadeIn>
         <Details />
       </FadeIn>
