@@ -14,7 +14,8 @@ interface GuestFormData {
 }
 
 const alcoholLabels: Record<string, string> = {
-    wine: 'Вино',
+    redWine: 'Вино красное',
+    whiteWine: 'Вино белое',
     champagne: 'Шампанское',
     vodka: 'Водка',
     whiskey: 'Виски',

@@ -182,18 +182,33 @@ export function QuestionModal({ onClose, guestNames = [] }: QuestionModalProps) 
                                     </div>
                                     <div className="flex items-center gap-2">
                                         <Checkbox
-                                            id={`alcohol-wine-${index}`}
-                                            checked={(field.value ?? []).includes('wine')}
+                                            id={`alcohol-redwine-${index}`}
+                                            checked={(field.value ?? []).includes('redWine')}
                                             onChange={(e) => {
                                                 const currentValue = field.value ?? [];
                                                 if (e.target.checked) {
-                                                    field.onChange([...currentValue, 'wine']);
+                                                    field.onChange([...currentValue, 'redWine']);
                                                 } else {
-                                                    field.onChange(currentValue.filter((v) => v !== 'wine'));
+                                                    field.onChange(currentValue.filter((v) => v !== 'redWine'));
                                                 }
                                             }}
                                         />
-                                        <Label htmlFor={`alcohol-wine-${index}`} className="text-xl w-full">Вино</Label>
+                                        <Label htmlFor={`alcohol-redwine-${index}`} className="text-xl w-full">Вино красное</Label>
+                                    </div>
+                                    <div className="flex items-center gap-2">
+                                        <Checkbox
+                                            id={`alcohol-whitewine-${index}`}
+                                            checked={(field.value ?? []).includes('whiteWine')}
+                                            onChange={(e) => {
+                                                const currentValue = field.value ?? [];
+                                                if (e.target.checked) {
+                                                    field.onChange([...currentValue, 'whiteWine']);
+                                                } else {
+                                                    field.onChange(currentValue.filter((v) => v !== 'whiteWine'));
+                                                }
+                                            }}
+                                        />
+                                        <Label htmlFor={`alcohol-whitewine-${index}`} className="text-xl w-full">Вино белое</Label>
                                     </div>
                                     <div className="flex items-center gap-2">
                                         <Checkbox
