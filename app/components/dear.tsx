@@ -5,7 +5,7 @@ export function Dear() {
         <div className="relative overflow-hidden">
         <div className="container">
             <Image className="-z-10 absolute w-100 -left-60 md:-left-50" src="/assets/images/bg/width_200.webp" width={200} height={200} alt="" />
-            <Image className="-z-10 absolute w-100 -right-60 top-0 md:-right-50" src="/assets/images/bg/width_200.webp" width={200} height={200} alt="" />
+            <Image className="-z-10 absolute w-100 -right-60 top-60 md:top-0 md:-right-50" src="/assets/images/bg/width_200.webp" width={200} height={200} alt="" />
 
             <h2 className="font-anastasia text-6xl text-center mb-6">
                 Дорогие друзья
