@@ -1,5 +1,50 @@
 import { Suspense } from "react";
 import { Calendar, Dear, Details, DressCode, FadeIn, Hero, Location, Program, QuestProfile, Taimer, VisitTracker, We } from "./components";
+import type { Metadata } from "next";
+import guestsData from '@/guests.json';
+
+type Props = {
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+};
+
+export async function generateMetadata({ searchParams }: Props): Promise<Metadata> {
+  const params = await searchParams;
+  const familyId = params.familyId as string | undefined;
+
+  let description = "Приглашаем вас разделить с нами радость нашего особенного дня!";
+  let title = "Приглашение на свадьбу";
+
+  if (familyId) {
+    const family = guestsData.families.find((f) => f.id === familyId);
+    if (family) {
+      const familyTitle = family.title ? `семья ${family.title}` : family.members.join(", ");
+      description = `Дорогие ${familyTitle}! Приглашаем вас разделить с нами радость нашего особенного дня!`;
+      title = `Приглашение на свадьбу - ${familyTitle}`;
+    }
+  }
+
+  return {
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+      images: [
+        {
+          url: `https://wedding-silk-ten.vercel.app/assets/images/og-image.jpeg`,
+          width: 800,
+          height: 800,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary",
+      title,
+      description,
+      images: ["https://wedding-silk-ten.vercel.app/images/og-image-tg.jpeg"],
+    },
+  };
+}
 
 export default function Home() {
   return (
