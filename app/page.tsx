@@ -38,6 +38,17 @@ export async function generateMetadata({ searchParams }: Props): Promise<Metadat
     //     },
     //   ],
     // },
+    openGraph: {
+      title,
+      description,
+      images: [
+        {
+          url: `https://wedding-silk-ten.vercel.app/images/og-image-tg.jpg`,
+          width: 800,
+          height: 800,
+        },
+      ],
+    },
     twitter: {
       card: "summary",
       title,
