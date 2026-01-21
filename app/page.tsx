@@ -11,15 +11,16 @@ export async function generateMetadata({ searchParams }: Props): Promise<Metadat
   const params = await searchParams;
   const familyId = params.familyId as string | undefined;
 
-  let description = "Приглашаем вас разделить с нами радость нашего особенного дня!";
   let title = "Приглашение на свадьбу";
+  let description = "Приглашаем вас разделить с нами радость нашего особенного дня!";
 
   if (familyId) {
     const family = guestsData.families.find((f) => f.id === familyId);
     if (family) {
-      const familyTitle = family.title ? `семья ${family.title}` : family.members.join(", ");
-      description = `Дорогие ${familyTitle}! Приглашаем вас разделить с нами радость нашего особенного дня!`;
-      title = `Приглашение на свадьбу - ${familyTitle}`;
+      title = `Приглашение на свадьбу для ${family.title}`;
+
+      const familyTitle = family.members.join(", ");
+      description = `${familyTitle} приглашаем вас разделить с нами радость нашего особенного дня!`;
     }
   }
 
