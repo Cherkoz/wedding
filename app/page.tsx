@@ -27,22 +27,22 @@ export async function generateMetadata({ searchParams }: Props): Promise<Metadat
   return {
     title,
     description,
-    openGraph: {
-      title,
-      description,
-      images: [
-        {
-          url: `https://wedding-silk-ten.vercel.app/assets/images/og-image.jpeg`,
-          width: 800,
-          height: 800,
-        },
-      ],
-    },
+    // openGraph: {
+    //   title,
+    //   description,
+    //   images: [
+    //     {
+    //       url: `https://wedding-silk-ten.vercel.app/assets/images/og-image.jpg`,
+    //       width: 1200,
+    //       height: 630,
+    //     },
+    //   ],
+    // },
     twitter: {
       card: "summary",
       title,
       description,
-      images: ["https://wedding-silk-ten.vercel.app/images/og-image-tg.jpeg"],
+      images: ["https://wedding-silk-ten.vercel.app/images/og-image-tg.jpg"],
     },
   };
 }
