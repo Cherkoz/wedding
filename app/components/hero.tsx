@@ -1,16 +1,15 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
 
 export function Hero() {
-    const [gifLoaded, setGifLoaded] = useState(false);
-
     return (
         <div className="container py-20! overflow-hidden lg:min-h-screen flex justify-center flex-col items-center gap-1">
-            <h1 className="leading-[0.9] flex text-4xl gap-1 md:text-6xl text-primary text-center mb-4 md:block">
-                Владислав <span>+</span> Валерия
-            </h1>
+            <div className="leading-[0.9] flex flex-col md:flex-row md:gap-4 items-center text-4xl md:text-6xl text-primary text-center mb-4">
+              <h1>Владислав <span>+</span> Валерия</h1>
+              <span>=</span>
+              <Image className="z-25 w-15 h-fit" src="/assets/images/wedding-rings.png" width={60} height={60} alt="" />
+            </div>
 
             <div className="relative flex flex-col items-center bg-white p-1 shadow w-fit">
                 <Image src="/assets/images/hero-pink.png" className="-z-10 absolute -top-26 w-[803px] min-w-[803px] h-[540px]" width={803} height={540} alt="" />

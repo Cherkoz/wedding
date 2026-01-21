@@ -20,9 +20,19 @@
 }
 
 body {
+  /* background: var(--background) url('/assets/images/bg.png') repeat; */
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-cormorant), serif;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: url('/assets/images/bg.png') center / cover no-repeat;
+  opacity: 0.2;
+  z-index: -1;
 }
 
 .font-anastasia {

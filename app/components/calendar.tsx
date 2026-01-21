@@ -1,4 +1,3 @@
-import { BsHeartFill } from "react-icons/bs";
 import { CiHeart } from "react-icons/ci";
 
 export function Calendar() {
