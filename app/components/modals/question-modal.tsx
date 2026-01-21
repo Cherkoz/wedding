@@ -11,14 +11,10 @@ interface QuestionModalProps {
     guestNames?: string[];
 }
 
-interface GuestData {
-    fullName: string;
-    attendance: string;
-    alcoholPreferences: string[];
-}
-
 export function QuestionModal({ onClose, guestNames = [] }: QuestionModalProps) {
     const [isPending, setIsPending] = useState(false);
+    const [showSuccessModal, setShowSuccessModal] = useState(false);
+    const [allWillAttend, setAllWillAttend] = useState(true);
 
     const guestSchema = Yup.object().shape({
         fullName: Yup.string()
@@ -79,8 +75,10 @@ export function QuestionModal({ onClose, guestNames = [] }: QuestionModalProps) 
                 throw new Error(result.error || 'Произошла ошибка при отправке');
             }
 
-            alert('✅ Анкета успешно отправлена!');
-            onClose();
+            // Проверяем, будет ли хотя бы один гость присутствовать
+            const hasAttendingGuests = data.guests?.some(guest => guest.attendance === 'yes') ?? false;
+            setAllWillAttend(hasAttendingGuests);
+            setShowSuccessModal(true);
         } catch (error) {
             console.error('Error submitting form:', error);
             alert('❌ Ошибка при отправке анкеты. Попробуйте еще раз.');
@@ -256,7 +254,7 @@ export function QuestionModal({ onClose, guestNames = [] }: QuestionModalProps) 
 
     return (
         <FormProvider {...formMethods}>
-            <Modal dismissible show onClose={onClose}>
+            <Modal dismissible show={!showSuccessModal} onClose={onClose}>
                 <ModalHeader className="border-gray-200">
                     <span className="font-extrabold text-3xl">Анкета гостя</span>
                 </ModalHeader>
@@ -273,6 +271,38 @@ export function QuestionModal({ onClose, guestNames = [] }: QuestionModalProps) 
                         color="brown"
                     >
                         Отправить анкету
+                    </Button>
+                </ModalFooter>
+            </Modal>
+
+            <Modal dismissible show={showSuccessModal} onClose={() => {
+                setShowSuccessModal(false);
+                onClose();
+            }}>
+                <ModalHeader className="border-gray-200">
+                    <span className="font-extrabold text-3xl">Успешно!</span>
+                </ModalHeader>
+                <ModalBody>
+                    <div className="text-center space-y-4">
+                        <div className="text-6xl">{allWillAttend ? '✅' : '💌'}</div>
+                        <p className="text-2xl font-bold">Анкета успешно отправлена!</p>
+                        {allWillAttend ? (
+                            <p className="text-xl text-gray-600">Спасибо за ваш ответ. Мы ждём вас на нашем празднике!</p>
+                        ) : (
+                            <p className="text-xl text-gray-600">Спасибо за ваш ответ. Жаль, что вы не сможете присутствовать, но мы надеемся увидеться в другой раз!</p>
+                        )}
+                    </div>
+                </ModalBody>
+                <ModalFooter>
+                    <Button
+                        onClick={() => {
+                            setShowSuccessModal(false);
+                            onClose();
+                        }}
+                        className="w-full"
+                        color="brown"
+                    >
+                        Закрыть
                     </Button>
                 </ModalFooter>
             </Modal>
