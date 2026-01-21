@@ -4,12 +4,6 @@ import guestsData from '@/guests.json';
 const TELEGRAM_BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN;
 const TELEGRAM_CHAT_ID = process.env.TELEGRAM_CHAT_ID;
 
-interface Family {
-    id: number;
-    title: string;
-    members: string[];
-}
-
 export async function POST(request: NextRequest) {
     try {
         const { familyId } = await request.json();
@@ -31,7 +25,9 @@ export async function POST(request: NextRequest) {
         }
 
         // Находим семью по ID
-        const family = guestsData.families.find((f: Family) => f.id === parseInt(familyId));
+        const family = guestsData.families.find(
+            (f) => f.id === familyId
+        );
 
         if (!family) {
             return NextResponse.json(

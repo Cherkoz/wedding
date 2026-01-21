@@ -14,7 +14,7 @@ export async function GET(request: NextRequest) {
         }
 
         const family = guestsData.families.find(
-            (f) => f.id === parseInt(familyId)
+            (f) => f.id === familyId
         );
 
         if (!family) {
