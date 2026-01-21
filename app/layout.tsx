@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond } from "next/font/google";
-import "./globals.css";
 import { ThemeInit } from "../.flowbite-react/init";
 import { ThemeProviderWrapper } from "./providers/theme-provider-wrapper";
+import "./globals.css";
 
 const cormorantGaramond = Cormorant_Garamond({
   variable: "--font-cormorant",
@@ -13,6 +13,23 @@ const cormorantGaramond = Cormorant_Garamond({
 export const metadata: Metadata = {
   title: "Приглашение на свадьбу",
   description: "",
+  openGraph: {
+    title: 'Приглашение на свадьбу',
+    description: '',
+    images: [
+      {
+        url: `https://wedding-silk-ten.vercel.app/assets/images/og-image.jpeg`,
+        width: 800,
+        height: 800,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary",
+    title: "Приглашение на свадьбу",
+    description: "",
+    images: ["https://wedding-silk-ten.vercel.app/images/og-image-tg.jpeg"],
+  },
 };
 
 export default function RootLayout({
