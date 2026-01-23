@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     card: "summary",
     title: "Приглашение на свадьбу",
     description: "",
-    images: ["https://wedding-silk-ten.vercel.app/images/og-image-tg.jpg"],
+    images: ["https://wedding-silk-ten.vercel.app/assets/images/og-image-tg.jpg"],
   },
 };
 

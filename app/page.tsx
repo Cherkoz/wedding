@@ -42,7 +42,7 @@ export async function generateMetadata({ searchParams }: Props): Promise<Metadat
       card: "summary",
       title,
       description,
-      images: ["https://wedding-silk-ten.vercel.app/images/og-image-tg.jpg"],
+      images: ["https://wedding-silk-ten.vercel.app/assets/images/og-image-tg.jpg"],
     },
   };
 }
