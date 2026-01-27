@@ -4,7 +4,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { Button, Checkbox, Label, Modal, ModalBody, ModalFooter, ModalHeader, Radio } from "flowbite-react";
 import { Controller, FormProvider, useForm } from 'react-hook-form';
 import * as Yup from 'yup';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 
 interface QuestionModalProps {
     onClose: () => void;
@@ -161,11 +161,12 @@ export function QuestionModal({ onClose, guestNames = [] }: QuestionModalProps) 
                         <Controller
                             name={`guests.${index}.alcoholPreferences` as const}
                             control={control}
-                            render={({ field }) => (
+                            render={({ field, fieldState }) => (
                                 <>
                                     <div className="flex items-center gap-2">
                                         <Checkbox
                                             id={`alcohol-champagne-${index}`}
+                                            ref={field.ref}
                                             checked={(field.value ?? []).includes('champagne')}
                                             onChange={(e) => {
                                                 const currentValue = field.value ?? [];
