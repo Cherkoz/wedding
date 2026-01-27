@@ -63,7 +63,7 @@ export function Taimer() {
 
                 <p className="mt-6 text-center text-2xl font-bold">
                     С нетерпением ждем,<br />
-                    Искренне ваши, Владислав и Валерия
+                    Искренне ваши,<br className="md:hidden" /> Владислав и Валерия
                 </p>
             </div>
         </div>

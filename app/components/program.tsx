@@ -28,7 +28,7 @@ export function Program() {
       <div className="relative">
       <div className="container">
         <Image className="-z-10 absolute w-100 rotate-180 -left-74 md:-left-50 -mt-50 md:-mt-50" src="/assets/images/bg/width_175.png" width={200} height={200} alt="" />
-        <Image className="-z-10 absolute w-100 rotate-200 -right-60 md:-right-30 mt-40 md:mt-20" src="/assets/images/bg/width_175.png" width={200} height={200} alt="" />
+        <Image className="-z-10 absolute w-100 rotate-200 -right-60 md:-right-30 mt-70 md:mt-20" src="/assets/images/bg/width_175.png" width={200} height={200} alt="" />
 
         <h2 className="font-anastasia text-6xl text-center mb-6">Программа</h2>
         
