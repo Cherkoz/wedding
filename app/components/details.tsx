@@ -26,7 +26,7 @@ export function Details() {
 
                     <div>
                         <h3 className="text-3xl font-extrabold mb-6">Чат для гостей</h3>
-                        <p className="text-2xl">Мы создали группу в Telegram. куда можно будет добавлять фото и видео с нашей свадьбы, чтобы сохранить в памяти лучшие моменты</p>
+                        <p className="text-2xl">Мы создали группу в Telegram, куда можно будет добавлять фото и видео с нашей свадьбы, чтобы сохранить в памяти лучшие моменты</p>
                         <a href="https://t.me/+RcCINPM2_Gs1YzI6" target="_blanck" className="block mt-6">
                             <Button color="brown" outline>
                                 Вступить в чат

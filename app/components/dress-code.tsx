@@ -13,7 +13,7 @@ export function DressCode() {
                 <Image src="/assets/images/fabrics/4.jpg" width={200} height={200} alt="" className="w-[100px] md:w-[200px] ml-[-50px] md:ml-[-100px] h-[100px] md:h-[200px] rounded-full" />
                 <Image src="/assets/images/fabrics/5.jpg" width={200} height={200} alt="" className="w-[100px] md:w-[200px] ml-[-50px] md:ml-[-100px] h-[100px] md:h-[200px] rounded-full" />
             </div>
-            <p className="text-2xl">*Девушки, посторайтесь избегать оттенков белого и черного</p>
+            <p className="text-2xl">*Девушки, постарайтесь избегать оттенков белого и черного</p>
         </div>
     );
 }

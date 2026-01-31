@@ -1,4 +1,6 @@
+import { Button } from "flowbite-react";
 import Image from "next/image";
+import Link from "next/link";
 
 export function Program() {
     const items = [
@@ -6,6 +8,10 @@ export function Program() {
         time: "15:45",
         title: "Торжественная церемония в ЗАГС",
         description: "По адресу: Таганская ул., 44  (присутствие по желанию)",
+        link: {
+          text: 'Посмотреть на карте',
+          href: 'https://yandex.ru/maps/213/moscow/?ll=37.670746%2C55.738646&mode=poi&poi%5Bpoint%5D=37.670281%2C55.738951&poi%5Buri%5D=ymapsbm1%3A%2F%2Forg%3Foid%3D1105034316&source=serp_navig&z=17.8',
+        }
       },
       {
         time: "16:30",
@@ -51,6 +57,11 @@ export function Program() {
                         <small className="mt-2 text-xl">
                             {item.description}
                         </small>
+                        {item.link && (
+                          <Link href={item.link.href} className="z-100" target="_blank">
+                            <Button size="xs" color="brown" outline className="mt-2">{item.link.text}</Button>
+                          </Link>
+                        )}
                     </div>
                 </div>
             ))}

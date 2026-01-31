@@ -6,7 +6,7 @@ export function We() {
             <div className="flex flex-col gap-6">
                 <h2 className="text-4xl text-center md:text-left">Да - да это мы</h2>
                 <p className="text-2xl max-w-[600px] text-center md:text-left">
-                    когда- то мы были детьми, беззаботными
+                    когда - то мы были детьми, беззаботными
                     и веселыми, а потом выросли и встретили
                     друг друга.... и поняли, что хотим быть
                     вместе навсегда

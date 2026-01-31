@@ -65,10 +65,10 @@ export default function Home() {
       <FadeIn>
         <Calendar />
       </FadeIn>
-      <FadeIn>
+      <FadeIn className="relative z-10">
         <Location />
       </FadeIn>
-      <FadeIn className="-z-10 relative">
+      <FadeIn>
         <Program />
       </FadeIn>
       <FadeIn>

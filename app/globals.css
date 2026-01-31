@@ -31,7 +31,7 @@ body::before {
   inset: 0;
   background: url('/assets/images/bg.png') center / cover no-repeat;
   z-index: -1;
-  @apply opacity-10 md:opacity-20;
+  @apply opacity-10;
 }
 
 .font-anastasia {
