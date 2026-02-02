@@ -14,8 +14,8 @@ export function We() {
             </div>
             <Image src="/assets/images/this-us.jpg"
                 className="w-full md:w-[300px] max-w-[400px]"
-                width={300}
-                height={400}
+                width={800}
+                height={1066}
                 alt=""
             />
         </div>
