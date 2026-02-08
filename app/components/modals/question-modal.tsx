@@ -24,6 +24,12 @@ export function QuestionModal({ onClose, guestNames = [] }: QuestionModalProps) 
         attendance: Yup.string()
             .required('Обязательное поле')
             .oneOf(['yes', 'no'], 'Выберите один из вариантов'),
+        eventAttendance: Yup.string()
+            .when('attendance', {
+                is: 'yes',
+                then: (schema) => schema.required('Обязательное поле').oneOf(['zags', 'banquet', 'both'], 'Выберите один из вариантов'),
+                otherwise: (schema) => schema.notRequired(),
+            }),
         alcoholPreferences: Yup.array()
             .of(Yup.string())
             .min(1, 'Выберите хотя бы один вариант'),
@@ -38,11 +44,13 @@ export function QuestionModal({ onClose, guestNames = [] }: QuestionModalProps) 
         ? guestNames.map(name => ({
             fullName: name,
             attendance: '',
+            eventAttendance: '',
             alcoholPreferences: [],
         }))
         : [{
             fullName: '',
             attendance: '',
+            eventAttendance: '',
             alcoholPreferences: [],
         }];
 
@@ -55,7 +63,7 @@ export function QuestionModal({ onClose, guestNames = [] }: QuestionModalProps) 
         },
     });
 
-    const { handleSubmit, control, formState: { errors } } = formMethods;
+    const { handleSubmit, control, watch, formState: { errors } } = formMethods;
 
     const submit = handleSubmit(async (data) => {
         setIsPending(true);
@@ -154,6 +162,54 @@ export function QuestionModal({ onClose, guestNames = [] }: QuestionModalProps) 
                         </p>
                     )}
                 </div>
+
+                {watch(`guests.${index}.attendance`) === 'yes' && (
+                    <div>
+                        <Label className="mb-2 block text-xl font-bold">Где планируете присутствовать?</Label>
+                        <div className="flex flex-col gap-2">
+                            <Controller
+                                name={`guests.${index}.eventAttendance` as const}
+                                control={control}
+                                render={({ field }) => (
+                                    <>
+                                        <div className="flex items-center gap-2">
+                                            <Radio
+                                                id={`event-zags-${index}`}
+                                                {...field}
+                                                value="zags"
+                                                checked={field.value === 'zags'}
+                                            />
+                                            <Label htmlFor={`event-zags-${index}`} className="text-xl w-full">Только в ЗАГСе</Label>
+                                        </div>
+                                        <div className="flex items-center gap-2">
+                                            <Radio
+                                                id={`event-banquet-${index}`}
+                                                {...field}
+                                                value="banquet"
+                                                checked={field.value === 'banquet'}
+                                            />
+                                            <Label htmlFor={`event-banquet-${index}`} className="text-xl w-full">Только на банкете</Label>
+                                        </div>
+                                        <div className="flex items-center gap-2">
+                                            <Radio
+                                                id={`event-both-${index}`}
+                                                {...field}
+                                                value="both"
+                                                checked={field.value === 'both'}
+                                            />
+                                            <Label htmlFor={`event-both-${index}`} className="text-xl w-full">Обязательно буду и в ЗАГСе, и на банкете</Label>
+                                        </div>
+                                    </>
+                                )}
+                            />
+                        </div>
+                        {guestErrors.eventAttendance && (
+                            <p className="mt-1 text-xl text-red-600">
+                                {guestErrors.eventAttendance.message}
+                            </p>
+                        )}
+                    </div>
+                )}
 
                 <div>
                     <Label className="mb-2 block  text-xl font-bold">Предпочтения по алкоголю</Label>

@@ -6,6 +6,7 @@ const TELEGRAM_CHAT_ID = process.env.TELEGRAM_CHAT_ID;
 interface GuestData {
     fullName: string;
     attendance: 'yes' | 'no';
+    eventAttendance?: 'zags' | 'banquet' | 'both';
     alcoholPreferences: string[];
 }
 
@@ -22,6 +23,12 @@ const alcoholLabels: Record<string, string> = {
     cognac: 'Коньяк',
     beer: 'Пиво',
     none: 'Не употребляю',
+};
+
+const eventAttendanceLabels: Record<string, string> = {
+    zags: 'Только в ЗАГСе',
+    banquet: 'Только на банкете',
+    both: 'И в ЗАГСе, и на банкете',
 };
 
 export async function POST(request: NextRequest) {
@@ -41,6 +48,13 @@ export async function POST(request: NextRequest) {
             if (!guest.fullName || !guest.attendance || !guest.alcoholPreferences?.length) {
                 return NextResponse.json(
                     { error: 'Все поля обязательны для заполнения для каждого гостя' },
+                    { status: 400 }
+                );
+            }
+            // Если гость планирует присутствовать, должно быть указано где именно
+            if (guest.attendance === 'yes' && !guest.eventAttendance) {
+                return NextResponse.json(
+                    { error: 'Укажите где планируете присутствовать для каждого гостя' },
                     { status: 400 }
                 );
             }
@@ -65,10 +79,14 @@ export async function POST(request: NextRequest) {
                 ? '✅ Обязательно буду'
                 : '❌ К сожалению, не смогу присутствовать';
 
+            const eventAttendanceText = guest.attendance === 'yes' && guest.eventAttendance
+                ? `\n🎯 <b>Где:</b> ${eventAttendanceLabels[guest.eventAttendance] || guest.eventAttendance}`
+                : '';
+
             return `
 <b>Гость ${index + 1}:</b>
 👤 <b>ФИО:</b> ${guest.fullName}
-📍 <b>Присутствие:</b> ${attendanceText}
+📍 <b>Присутствие:</b> ${attendanceText}${eventAttendanceText}
 🍷 <b>Предпочтения по алкоголю:</b> ${alcoholPrefs}
             `.trim();
         }).join('\n\n');
