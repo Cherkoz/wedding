@@ -52,7 +52,7 @@ export function QuestProfile() {
                 </div>
             </div>
 
-            <p className="text-center text-2xl font-bold mt-6">Будем ждать ответ до 15 мая</p>
+            <p className="text-center text-2xl font-bold mt-6">Будем ждать ответ до 14 июня</p>
 
             {openModal && <QuestionModal onClose={() => setOpenModal(false)} guestNames={guestNames} />}
         </div>
